@@ -1,0 +1,28 @@
+package static_nested_classes;
+
+abstract class Shape {
+
+	public static class Color {
+		int m_red, m_green, m_blue;
+		
+		/* static member is allowed within static inner classes */
+//		public static int valid = 0;
+		
+		public Color() {
+			// call the other overloaded Color Constructor by passing default values
+			this(0, 0, 0);
+		}
+		
+		public Color(int red, int green, int blue) {
+			m_red = red; m_green = green; m_blue = blue;
+		}
+		
+		public String toString() {
+			return " red = " + m_red + " green = " + m_green + " blue = " + m_blue;
+		}
+		
+		// other color member elided
+	}
+	
+	// other Shape members elided
+}
